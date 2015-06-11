@@ -1,0 +1,45 @@
+<ion-view title="Product Open Database">
+  <ion-content class="stable-bg">
+
+      <div class="" style="margin-bottom: 0">
+        <div class="row">
+          <input maxlength="13" ng-model="data.barcodeInput" ng-change="updateBarcode(data.barcodeInput)" class="item col col-80" placeholder="Your product barcode goes here...">
+          <button class="col col-20 button  button-small button-assertive" ng-click="scanBarcode()">Scan</button>
+        </div>
+      </div>
+
+    <div class="row" style="padding: 10px">
+    <canvas style="margin:auto" id="barcode"></canvas>
+    </div>
+
+     <div class="row" style="margin-top:1%;" >
+       <button class="button button-block button-small button-positive" ng-click="getProductInfo()">Search for product</button>
+     </div>
+
+     <div class="card" ng-show="showProductTable">
+        <div class="list">
+          <div class="item item-divider">
+            Product information
+          </div>
+
+          <div class="item item-body row" ng-repeat="product in productData">
+            <div class="col col-30" style="margin:auto">
+              {{product.name}}
+            </div>
+            <div class="col col-70">
+              {{product.literal}}
+            </div>
+
+          </div>
+        </div>
+     </div>
+
+    <div class="row">
+      <ion-spinner class="spinner-positive" icon="ripple" ng-show="showSpinner" style="margin:auto"></ion-spinner>
+    </div>
+    <!--<button class="button button-assertive" ng-click="getDataForProduct()"> ping server</button>-->
+      {{serverInfo}}
+
+    <!--<button class="button" ng-click="parseXML()">xml</button>-->
+  </ion-content>
+</ion-view>
