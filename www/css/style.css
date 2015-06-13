@@ -10,3 +10,18 @@
   margin-left:0 !important;
   margin-right:0 !important;
 }
+
+.scroll {
+    height: 100% !important;
+}
+
+.button-bottom {
+    position: absolute !important;
+    margin: auto !important;
+    bottom: 0 !important;
+    width: 100% !important;
+}
+
+.imgopacity{
+  opacity: 0.3;
+}

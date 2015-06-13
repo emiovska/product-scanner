@@ -1,0 +1,28 @@
+<ion-view title="Product Details">
+  <ion-content class="s">
+
+  <div class="padding-top">
+    <img ng-src="http://www.product-open-data.com/images/pod_logo_200px.png" style="margin:auto; display:block;" ng-class="{imgopacity : data.showSearching}"/>
+  </div>
+
+  <div ng-show="data.showProductDetails">
+
+    <div class="card">
+      <a class="item item-avatar" href="#" ng-repeat="product in productData">
+        <img src="http://www.iconattitude.com/icons/open_icon_library/others/png/256/circle_grey.png" style="opacity:0.5">
+        <h2 style="font-weight: bold;">{{product.name}}</h2>
+        <h2>{{product.literal}}</h2>
+      </a>
+    </div>
+  </div>
+
+  <div ng-show="data.noDataFound" class="row" style="margin-top:15%">
+    <img ng-src="http://www.zalawadsmpmandheri.org/Images/nodata.jpg" style="width:100%; height:30%; margin:auto">
+  </div>
+
+  <div ng-show="data.showSearching" style="width:100%;">
+    <img ng-src="http://www.qe.com.qa/pps/PortalTemplates/voting/progress.gif" width="150px" height="150px" style="margin:auto;display:block;margin-top:-42%">
+  </div>
+
+  </ion-content>
+</ion-view>
