@@ -1,8 +1,6 @@
 app.controller('ProductController', ['$scope','D2RService','$cordovaBarcodeScanner','$ionicPopup',
 function($scope,D2RService,$cordovaBarcodeScanner,$ionicPopup) {
 
-
-
   $scope.data = {
     barcodeInput: "",
     sensor: 0
@@ -13,15 +11,14 @@ function($scope,D2RService,$cordovaBarcodeScanner,$ionicPopup) {
 
   $("#barcode").JsBarcode("1234567891234",{width:1,displayValue:false,fontSize:20,lineColor:"#526666"});
 
-
   $scope.updateBarcode = function(val){
       if(val.length>=13){
         $("#barcode").JsBarcode(val,{width:1,displayValue:true,fontSize:20});
         $scope.showBarcodeInput=false;
       }
-     else
-        $("#barcode").JsBarcode("1234567891234",{width:1,displayValue:false,fontSize:20,lineColor:"#526666"});
-
+     else {
+       $("#barcode").JsBarcode("1234567891234",{width:1,displayValue:false,fontSize:20,lineColor:"#526666"});
+       }
       $scope.showProductTable=false;
   };
 
@@ -39,7 +36,6 @@ function($scope,D2RService,$cordovaBarcodeScanner,$ionicPopup) {
           });
   }
 
-
   $scope.editBarcode = function() {
     $scope.showBarcodeInput=true;
     $("#barcode").JsBarcode("1234567891234",{width:1,displayValue:false,fontSize:20,lineColor:"#526666"});
@@ -50,6 +46,5 @@ function($scope,D2RService,$cordovaBarcodeScanner,$ionicPopup) {
         scanBarcode();
     }
   }
-
 
 }]);

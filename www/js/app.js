@@ -16,4 +16,6 @@ var app=angular.module('starter', ['ionic','ngCordova','ngDragDrop'])
       StatusBar.styleDefault();
     }
   });
-})
+}).filter('escape', function() {
+     return window.encodeURIComponent;
+   });

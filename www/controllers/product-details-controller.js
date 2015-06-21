@@ -2,12 +2,11 @@ app.controller('ProductDetailsController', ['$scope','D2RService','$stateParams'
 function($scope,D2RService,$stateParams,$timeout) {
 
   var barcode = $stateParams.barcode;
-
+  var checkoutTimeout=3;
   $scope.data = {
     showSearching: true,
     noDataFound: false,
     showProductDetails: false
-
   }
   var literalTranslation={};
     literalTranslation["brandName"]="Brand name";
@@ -45,8 +44,11 @@ function($scope,D2RService,$stateParams,$timeout) {
           }
         }
       },function(error){
-
-        getProductInfo();
+        checkoutTimeout--;
+        if(checkoutTimeout>=0)
+           getProductInfo();
+        else
+           alert(error);
       });
     }
 
